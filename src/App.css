@@ -177,27 +177,90 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .modal-content {
-  background-color: #121220;
+  background-color: #161526;
+  color: #ffffff;
   padding: 24px;
   border-radius: 12px;
   width: 90%;
-  max-width: 600px;
+  max-width: 620px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Arial', sans-serif;
+}
+
+.modal-button-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.modal-action-button {
+  background-color: transparent;
+  border: 2px solid #a974ff;
   color: white;
-  border: 1px solid #7B61FF;
-  position: relative;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
-.modal-content h3 {
-  text-align: center;
-  margin-bottom: 20px;
+
+.modal-action-button:hover {
+  background-color: #a974ff;
 }
+
+.genbank-links a {
+  color: #b47aff;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.genbank-links a:hover {
+  text-decoration: underline;
+}
+
+.modal-label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a974ff;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: #a974ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #c597ff;
+}
+
 
 .close-button {
   position: absolute;
@@ -289,4 +352,102 @@ html, body {
 .centered {
   align-items: center;
   justify-content: center;
+}
+
+.file-upload {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #2c2f45;
+  color: #ccc;
+  border: 1px dashed #666;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: background-color 0.2s;
+}
+
+.file-upload:hover {
+  background-color: #383b52;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-format-note {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-box {
+  visibility: hidden;
+  background-color: #b388eb;
+  color: white;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%; /* or top: 130% depending on layout */
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  font-size: 0.9em;
+  white-space: pre-line;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.tooltip-container:hover .tooltip-box {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-title {
+  margin-bottom: 8px;
+}
+
+.centered-buttons {
+  justify-content: center;
+}
+
+.loading-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #6c63ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
